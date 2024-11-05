@@ -32,8 +32,10 @@ public class Main {
                 case "D":
                     // 직전에 iter.next()를 진행했던 원소를 제거하므로
                     // 반드시 remove() 전에 iter.next()를 먼저 수행해야 함
-                    iter.next();
-                    iter.remove();
+                    if (iter.hasNext()) {
+                        iter.next();
+                        iter.remove();
+                    }
                     break;
                 case "P":
                     String ch = st.nextToken();
